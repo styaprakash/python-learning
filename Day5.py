@@ -205,5 +205,5 @@ for student_id, info in students.items():
 
     if average > 85:
         print(f"\nStudent ID: {student_id} (Average: {average:.2f})")
-        for key, value in info.items()w:
-            print(f"  {key}: {value}")wwwwwwwwwwwww
+        for key, value in info.items():
+            print(f"  {key}: {value}")
