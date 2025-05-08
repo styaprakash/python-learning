@@ -114,96 +114,132 @@ from traceback import print_tb
 # print(set_new2.issuperset(set_new1))
 
 
-# Dictionary: Basic a DS to store elements in a key-value pair. We can consider it as hashmap like in java
-student = {
-    "name": "Alice",
-    "age": 21,
-    "grades": [85, 69, 92]
-}
-
-# Accessing values
-# print(student["name"]) #one way to get the value of a key
-# print(student.get("age"))
-# print(student.get("gender", "Not specified")) #Default value
-# print(student.get("name")) #another way to get the value of a key
-# print(student.get("age"))
+# # Dictionary: Basic a DS to store elements in a key-value pair. We can consider it as hashmap like in java
+# student = {
+#     "name": "Alice",
+#     "age": 21,
+#     "grades": [85, 69, 92]
+# }
+#
+# # Accessing values
+# # print(student["name"]) #one way to get the value of a key
+# # print(student.get("age"))
+# # print(student.get("gender", "Not specified")) #Default value
+# # print(student.get("name")) #another way to get the value of a key
+# # print(student.get("age"))
+# # print(student.get("grades"))
+#
+# # Adding or updating
+# student["major"]="cs"
+# student["age"]=22
+#
+# # Deleting a key
+# del student["grades"]
 # print(student.get("grades"))
+#
+# #Iterating
+# for key, value in student.items():
+#     print(f"{key} -> {value}") # .items() => Returns (key, value) pairs
+#
+# # Key rules and edge cases
+# # - keys must be immutable but values can be of any type.
+# # - keys must be unique
+# # - If you use a mutable object like a list as a key: ❌ Error (TypeError: unhashable type).
+#
+# # Nested dictionary
+# database = {
+#     "user1": {"name":"Alice", "age": 25},
+#     "user2": {"name": "Satya", "age": 23}
+# }
+# print(database["user1"]["age"])
+#
+# students = {
+#     "101": {
+#         "name": "Alia",
+#         "age": 20,
+#         "grades": [90,25,36]
+#     },
+#     "102": {
+#         "name": "SATYA",
+#         "age":22,
+#         "grades": [70,69,54]
+#     }
+# }
+#
+# # Accessing Nested Data
+# print(students["101"]["name"])
+# print(students["102"]["name"])
+# print(students["102"]["grades"][1])
+#
+# # Adding Data to Nested Dict
+# students["103"] = {
+#     "name": "Charlie",
+#     "age": 21,
+#     "grades": [88,14,72]
+# }
+#
+# # updating values
+# students["101"]["age"] = 21 # one way to update the value
+# students["102"]["grades"].append(16) # another way to update the value
+#
+# # Iterating over Nested Dist
+# for student_id, info in students.items():
+#     print(f"\nID: {student_id}")
+#     for key, value in info.items():
+#         print(f"{key}: {value}")
+#
+# students1 = {
+#     "201": {"name": "John", "age": 22, "grades": [85, 90]},
+#     "202": {"name": "Emma", "age": 23, "grades": [88, 76]},
+#     "203": {"name": "Liam", "age": 21, "grades": [92, 81]}
+# }
+# for stud_id, ids in students1.items():
+#     print(f"\n Student Id: {stud_id}")
+#     for key, value in ids.items():
+#         print(f"\t{key} : {value}")
+#
+# # code that prints only students whose average grade is greater than 85
+# for student_id, info in students.items():
+#     grades = info["grades"]
+#     average = sum(grades) / len(grades)
+#
+#     if average > 85:
+#         print(f"\nStudent ID: {student_id} (Average: {average:.2f})")
+#         for key, value in info.items():
+#             print(f"  {key}: {value}")
 
-# Adding or updating
-student["major"]="cs"
-student["age"]=22
+# String Manipulation
 
-# Deleting a key
-del student["grades"]
-print(student.get("grades"))
+# s="Python"
+# print(s[0])
+# print(s[-1]) #backwards
+# print(s[1:4]) # slicing
+#
+# # Common String Methods
+# text = "  Hello, Python World!  "
+#
+# print(text.lower()) # convert to lower case
+# print(text.upper()) # convert to upper case
+# print(text.strip()) # Removes leading/trailing whitespace
+# print(text.replace("Python", "Java")) #  Replace characters or substrings
+# print(text.strip().split()) # Split into a list
+# print("a-b-c".split("-"))
+# words = ["Hello", "Python", "World"]
+# print(" ".join(words)) # Join a list into string
+# print("-".join(words))
+# print(text.find("Python"))
+# print(text.find("Java"))
+# print(text.strip().startswith("Hello")) # Checks prefix
+# print(text.strip().endswith("World!"))  # Checks suffix
+# print(text.count("o")) # Count number of occurrences
 
-#Iterating
-for key, value in student.items():
-    print(f"{key} -> {value}") # .items() => Returns (key, value) pairs
-
-# Key rules and edge cases
-# - keys must be immutable but values can be of any type.
-# - keys must be unique
-# - If you use a mutable object like a list as a key: ❌ Error (TypeError: unhashable type).
-
-# Nested dictionary
-database = {
-    "user1": {"name":"Alice", "age": 25},
-    "user2": {"name": "Satya", "age": 23}
-}
-print(database["user1"]["age"])
-
-students = {
-    "101": {
-        "name": "Alia",
-        "age": 20,
-        "grades": [90,25,36]
-    },
-    "102": {
-        "name": "SATYA",
-        "age":22,
-        "grades": [70,69,54]
-    }
-}
-
-# Accessing Nested Data
-print(students["101"]["name"])
-print(students["102"]["name"])
-print(students["102"]["grades"][1])
-
-# Adding Data to Nested Dict
-students["103"] = {
-    "name": "Charlie",
-    "age": 21,
-    "grades": [88,14,72]
-}
-
-# updating values
-students["101"]["age"] = 21 # one way to update the value
-students["102"]["grades"].append(16) # another way to update the value
-
-# Iterating over Nested Dist
-for student_id, info in students.items():
-    print(f"\nID: {student_id}")
-    for key, value in info.items():
-        print(f"{key}: {value}")
-
-students1 = {
-    "201": {"name": "John", "age": 22, "grades": [85, 90]},
-    "202": {"name": "Emma", "age": 23, "grades": [88, 76]},
-    "203": {"name": "Liam", "age": 21, "grades": [92, 81]}
-}
-for stud_id, ids in students1.items():
-    print(f"\n Student Id: {stud_id}")
-    for key, value in ids.items():
-        print(f"\t{key} : {value}")
-
-# code that prints only students whose average grade is greater than 85
-for student_id, info in students.items():
-    grades = info["grades"]
-    average = sum(grades) / len(grades)
-
-    if average > 85:
-        print(f"\nStudent ID: {student_id} (Average: {average:.2f})")
-        for key, value in info.items():
-            print(f"  {key}: {value}")
+s1 = "   Learn Python Programming   "
+print(s1.strip())
+print(s1.lower())
+print(s1.upper())
+print(s1.strip().split())
+print("-".join(s1.strip()))
+print(s1.strip().startswith("Learn"))
+print(s1.strip().endswith("ing"))
+print(s1.count("P"))
+print(s1.find("Learn"))
