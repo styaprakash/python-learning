@@ -130,6 +130,6 @@ from itertools import count
 # add = lambda x,y: x+y
 # print(add(5,6))
 
-# num = [1,2,3,4,5]
-# res = map(lambda x: x*x, num)
-# print(list(res))
+                                                                                                                                                                                                                                                                                                                                                                                                            # num = [1,2,3,4,5]
+                                                                                                                                                                                                                                                                                                                                                                                                            # res = map(lambda x: x*x, num)
+                                                                                                                                                                                                                                                                                                                                                                                                            # print(list(res))
