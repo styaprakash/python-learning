@@ -233,13 +233,77 @@ from traceback import print_tb
 # print(text.strip().endswith("World!"))  # Checks suffix
 # print(text.count("o")) # Count number of occurrences
 
-s1 = "   Learn Python Programming   "
-print(s1.strip())
-print(s1.lower())
-print(s1.upper())
-print(s1.strip().split())
-print("-".join(s1.strip()))
-print(s1.strip().startswith("Learn"))
-print(s1.strip().endswith("ing"))
-print(s1.count("P"))
-print(s1.find("Learn"))
+# s1 = "   Learn Python Programming   "
+# print(s1.strip())
+# print(s1.lower())
+# print(s1.upper())
+# print(s1.strip().split())
+# print("-".join(s1.strip()))
+# print(s1.strip().startswith("Learn"))
+# print(s1.strip().endswith("ing"))
+# print(s1.count("P"))
+# print(s1.find("Learn"))
+
+# s = "MasterPython"
+# print(s[0:6]) # Master
+# print(s[6:12]) # Python
+# # -ve indexing: Negative indexes count from the end
+# print(s[-6:])  # Python
+# print(s[:-3])   # MasterPyt
+#
+# print(s[::3])
+# print(s[::-1]) #reverse the string in best way
+# print(s[::-2])
+#
+# String Formatting in Python
+name = "Alice"
+age = 25
+# Old - style formatting
+print("My name is %s and im %d years old." % (name, age))
+# str.format() method
+print("My name is {} and im {} years old.".format(name,age))
+# f-strings (Python 3.6+) ✅ Recommended
+print(f"My name is {name} and im {age} years old.")
+
+#
+# # Check for pallindrome
+# def is_palindrome(s):
+#     s= s.strip().lower() # convert it to a stripped string in lower letters
+#     return s==s[::-1] #reverse the string and compare
+# print("is this a pallindrome string: ",is_palindrome("Racecar"))
+# print("is this a pallindrome string: ",is_palindrome("Satya"))
+#
+# # Count Vowels and Consonants
+# def count_VandC(s):
+#     vowels = "aeiouAEIOU"
+#     v=0
+#     c=0
+#     for charS  in s:
+#         if charS.isalpha():
+#             if charS in vowels:
+#                 v+=1
+#             else:
+#                 c+=1
+#     return v, c
+# print(count_VandC("Learn Python"))
+#
+# # Anagram Checker
+# def anagram_checker(s1, s2):
+#     return sorted(s1.replace(" ","").lower()) == sorted(s2.replace(" ","").lower())
+# print(anagram_checker("Listen", "Silent"))    # True
+# print(anagram_checker("Hello", "World"))
+#
+# # Longest word in a sentence
+# def longest_word(sentence):
+#     words = sentence.split() # its convert an entire string to a char array
+#     return max(words, key=len)
+# print(longest_word("Python is fun and educational"))
+#
+# def long_word(sentence):
+#     words = sentence.split()
+#     longest = ""
+#     for word in words:
+#         if len(word) > len(longest):
+#             longest = word
+#     return longest
+# print(long_word("Python is fun and Educational!"))
